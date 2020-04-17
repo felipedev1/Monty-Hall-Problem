@@ -2,9 +2,12 @@
   "name": "monty-hall",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://felipedev1.github.io/monty-hall-problem",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {

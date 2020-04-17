@@ -1,37 +1,34 @@
 <template>
   <div class="door-area">
-    <div class="door-frame" :class="{selected: selected && !open}">
-      <Gift v-if="open && hasGift"/>
+    <div class="door-frame" :class="{ selected: selected && !open }">
+      <Gift v-if="open && hasGift" />
     </div>
-    <div class="door" :class="{open}"
-    @click="selected = !selected">
-      <div class="number" :class="{selected}">{{number}}</div>
-      <div class="knob" :class="{selected}"
-      @click.stop="open = true"></div>
+    <div class="door" :class="{ open }" @click="selected = !selected">
+      <div class="number" :class="{ selected }">{{ number }}</div>
+      <div class="knob" :class="{ selected }" @click.stop="open = true"></div>
     </div>
   </div>
 </template>
 
 <script>
-import Gift from './Gift'
+import Gift from "./Gift";
 export default {
-  name: 'Door',
+  name: "Door",
   components: { Gift },
   props: {
     number: {},
-    hasGift: {type: Boolean}
+    hasGift: { type: Boolean },
   },
-  data: function(){
-    return{
+  data: function() {
+    return {
       open: false,
       selected: false,
-    }
-  }
-}
+    };
+  },
+};
 </script>
 
 <style>
-
 .door-area {
   position: relative;
   width: 200px;
@@ -42,7 +39,7 @@ export default {
   display: flex;
   justify-content: center;
 }
-.door-frame{
+.door-frame {
   position: absolute;
   height: 300px;
   width: 180px;
@@ -52,7 +49,7 @@ export default {
   justify-content: center;
   align-items: flex-end;
 }
-.door{
+.door {
   position: absolute;
   top: 5px;
   height: 295px;

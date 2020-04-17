@@ -4,13 +4,22 @@
     <div class="form">
       <div v-if="!started">
         <label for="portsAmount">How many doors?</label>
-        <input type="text" id="portsAmount" size="3"
-        v-model.number="portsAmount" @change="maxPorts">
+        <input
+          type="text"
+          id="portsAmount"
+          size="3"
+          v-model.number="portsAmount"
+          @change="maxPorts"
+        />
       </div>
       <div v-if="!started">
         <label for="selectedPort">Which door will win?</label>
-        <input type="text" id="selectedPort" size="3"
-        v-model.number="selectedPort">
+        <input
+          type="text"
+          id="selectedPort"
+          size="3"
+          v-model.number="selectedPort"
+        />
       </div>
       <button v-if="!started" @click="started = true">Start</button>
       <button v-if="started" @click="started = false">Restart</button>
@@ -24,25 +33,25 @@
 </template>
 
 <script>
-import Door from './components/Door'
+import Door from "./components/Door";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-     Door
+    Door,
   },
-  data: function(){
+  data: function() {
     return {
       started: false,
       portsAmount: 3,
-      selectedPort: null
-    }
+      selectedPort: null,
+    };
   },
   methods: {
     maxPorts() {
-      if(this.portsAmount > 100) this.portsAmount = 100
-    }
-  }
-}
+      if (this.portsAmount > 100) this.portsAmount = 100;
+    },
+  },
+};
 </script>
 
 <style>
@@ -65,15 +74,16 @@ body {
   padding: 20px;
   margin-bottom: 60px;
 }
-.form{
-  display:flex;
+.form {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 2rem;
   margin-bottom: 60px;
 }
-.form input, .form button {
+.form input,
+.form button {
   margin-bottom: 10px;
   font-size: 2rem;
 }
