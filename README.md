@@ -1,5 +1,7 @@
 # monty-hall
 
+Font: https://www.youtube.com/watch?v=yRsQVNTfb0M
+
 ## Project setup
 ```
 yarn install
